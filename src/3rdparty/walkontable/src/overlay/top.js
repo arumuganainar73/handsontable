@@ -205,10 +205,12 @@ class TopOverlay extends Overlay {
     }
     if (typeof this.wot.wtViewport.rowsRenderCalculator.startPosition === 'number') {
       this.spreader.style.top = `${this.wot.wtViewport.rowsRenderCalculator.startPosition}px`;
+      console.log('newtop2', this.spreader.style.top, this.type);
 
     } else if (total === 0) {
       // can happen if there are 0 rows
       this.spreader.style.top = '0';
+      console.log('newtop3', '0', this.type);
 
     } else {
       throw new Error('Incorrect value of the rowsRenderCalculator');

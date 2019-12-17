@@ -321,6 +321,7 @@ class Overlay {
     clone.className = `ht_clone_${direction} handsontable`;
     clone.style.position = 'absolute';
     clone.style.top = 0;
+    console.log('newtop1 + newleft1', 0, this.type);
     clone.style.left = 0;
     clone.style.overflow = 'visible';
 

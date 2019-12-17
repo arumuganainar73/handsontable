@@ -449,6 +449,7 @@ class Overlays {
    */
   refresh(fastDraw = false) {
     if (this.topOverlay.areElementSizesAdjusted && this.leftOverlay.areElementSizesAdjusted) {
+      console.log('adjusting all element sizes', this.topOverlay.areElementSizesAdjusted, this.leftOverlay.areElementSizesAdjusted);
       const container = this.wot.wtTable.wtRootElement.parentNode || this.wot.wtTable.wtRootElement;
       const width = container.clientWidth;
       const height = container.clientHeight;

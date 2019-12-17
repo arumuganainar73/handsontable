@@ -1,18 +1,19 @@
+/* eslint-disable */
 describe('Core_loadData', () => {
   const id = 'testContainer';
 
-  beforeEach(function() {
+  beforeEach(function () {
     this.$container = $(`<div id="${id}"></div>`).appendTo('body');
   });
 
-  afterEach(function() {
+  afterEach(function () {
     if (this.$container) {
       destroy();
       this.$container.remove();
     }
   });
 
-  const arrayOfArrays = function() {
+  const arrayOfArrays = function () {
     return [
       ['', 'Kia', 'Nissan', 'Toyota', 'Honda'],
       ['2008', 10, 11, 12, 13],
@@ -21,7 +22,7 @@ describe('Core_loadData', () => {
     ];
   };
 
-  const arrayOfObjects = function() {
+  const arrayOfObjects = function () {
     return [
       { id: 1, name: 'Ted', lastName: 'Right' },
       { id: 2, name: 'Frank', lastName: 'Honest' },
@@ -36,7 +37,7 @@ describe('Core_loadData', () => {
     ];
   };
 
-  const arrayOfNestedObjects = function() {
+  const arrayOfNestedObjects = function () {
     return [
       {
         id: 1,
@@ -274,14 +275,26 @@ describe('Core_loadData', () => {
 
   it('should not invoke the cells callback multiple times with the same row/col (with overlays)', () => {
     const cellsSpy = jasmine.createSpy('cellsSpy');
-
+    let counter = 0;
     handsontable({
-      data: arrayOfNestedObjects(),
+      data: [[123, 456]],
       colHeaders: true,
       rowHeaders: true,
-      colWidths: [90, 90, 90, 90],
-      rowHeights: [90, 90, 90, 90],
-      cells: cellsSpy
+      colWidths: [90, 90],
+      rowHeights: [90],
+      cells: (param1, param2, param3) => {
+        debugger;
+
+        console.log(param1, param2, param3);
+        if (param3 === 1) {
+
+          counter++;
+          if (counter === 3) {
+
+          }
+        }
+        cellsSpy();
+      }
     });
 
     expect(cellsSpy.calls.count()).toEqual(56);

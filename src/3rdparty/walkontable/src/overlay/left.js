@@ -197,9 +197,11 @@ class LeftOverlay extends Overlay {
     }
     if (typeof this.wot.wtViewport.columnsRenderCalculator.startPosition === 'number') {
       this.spreader.style.left = `${this.wot.wtViewport.columnsRenderCalculator.startPosition}px`;
+      console.log('newleft2', '0', this.spreader.style.left);
 
     } else if (total === 0) {
       this.spreader.style.left = '0';
+      console.log('newleft3', '0', this.type);
 
     } else {
       throw new Error('Incorrect value of the columnsRenderCalculator');

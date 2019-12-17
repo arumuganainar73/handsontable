@@ -316,8 +316,12 @@ class Table {
 
         if (this.isMaster) {
           this.wot.wtViewport.createVisibleCalculators();
-          this.wot.wtOverlays.refresh(false);
+          // this.wot.wtOverlays.refresh(false);
+          // this.wot.wtOverlays.applyToDOM();
+
+          // I want:
           this.wot.wtOverlays.applyToDOM();
+          this.wot.wtOverlays.refresh(false);
 
           const hiderWidth = outerWidth(this.hider);
           const tableWidth = outerWidth(this.TABLE);

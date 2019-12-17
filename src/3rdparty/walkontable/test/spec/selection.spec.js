@@ -98,6 +98,7 @@ describe('Walkontable.Selection', () => {
     wt.selections.createOrGetArea().add(new Walkontable.CellCoords(1, 1));
 
     wt.draw();
+    console.log('======== 2nd draw =========');
     wt.draw(); // TODO as it turns out, the desired rendering is only visible after the second draw. A problem that does not appear in HOT but appears in raw WOT
 
     const paths = spec().$wrapper.find('svg path');
@@ -138,7 +139,7 @@ describe('Walkontable.Selection', () => {
     wt.draw();
     wt.scrollViewport(new Walkontable.CellCoords(38, 0));
     wt.draw();
-    wt.draw(); // TODO as it turns out, the desired rendering is only visible after the second draw. A problem that does not appear in HOT but appears in raw WOT. Why?
+    // wt.draw(); // TODO as it turns out, the desired rendering is only visible after the second draw. A problem that does not appear in HOT but appears in raw WOT. Why?
 
     const paths = spec().$wrapper.find('svg path');
     expect(paths.length).toBe(4);

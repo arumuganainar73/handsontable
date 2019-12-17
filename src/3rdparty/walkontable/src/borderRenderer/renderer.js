@@ -304,6 +304,7 @@ export default class BorderRenderer {
     const stylesAndLines = this.ensurePathGroup(layerNumber).stylesAndLines;
 
     const firstTdBoundingRect = firstTd.getBoundingClientRect();
+    console.log('firstTd', firstTdBoundingRect, firstTd);
     const lastTdBoundingRect = (firstTd === lastTd) ? firstTdBoundingRect : lastTd.getBoundingClientRect();
 
     let x1 = firstTdBoundingRect.left;
